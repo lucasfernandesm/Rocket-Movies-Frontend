@@ -39,12 +39,19 @@ export const Form =styled.form`
         margin: 0.8rem 0 2.4rem;
     }
 
-    a {
+    button:last-child {
         text-align: center;
 
+        background: none;
+        border: none;
+
         margin-top: 4.2rem;
-        text-decoration: none;
+
         color: ${({ theme }) => theme.COLORS.PINK};
+
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 `;
 
