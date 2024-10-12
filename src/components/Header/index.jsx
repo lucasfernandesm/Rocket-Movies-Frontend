@@ -3,12 +3,25 @@
 import { Container, Profile } from './style'
 import { Input } from '../Input'
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { useAuth } from '../../hooks/auth';
 
+import { api } from '../../services/api';
+
+import avatarPlaceholder from '../../assets/avatar_placeholder.svg';
+
+
 export function Header() {
-    const { signOut } = useAuth();
+    const { signOut, user } = useAuth();
+    const navigate = useNavigate();
+
+    function handleSignOut() {
+        navigate("/")
+        signOut();
+    }
+
+    const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
 
     return(
         <Container >
@@ -18,11 +31,11 @@ export function Header() {
 
             <Profile>
                 <div>
-                    <strong>Lucas Fernandes</strong>
-                    <button onClick={signOut}>sair</button>
+                    <strong>{user.name}</strong>
+                    <button onClick={handleSignOut}>sair</button>
                 </div>
 
-                <Link to="/profile"> <img src="https://github.com/lucasfernandesm.png" alt="Foto do usuário" /> </Link>
+                <Link to="/profile"> <img src={avatarUrl} alt={user.name} /> </Link>
             </Profile>
         </Container>
     )

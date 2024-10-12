@@ -3,9 +3,9 @@
 import { Container } from './style'
 import { FiArrowLeft } from 'react-icons/fi'
 
-export function ButtonText ({ title }) {
+export function ButtonText ({ title, ...rest }) {
     return(
-        <Container type="button">
+        <Container type="button" {...rest}>
             <FiArrowLeft />
             { title }
         </Container>
