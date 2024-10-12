@@ -17,7 +17,9 @@ export function SignUp() {
 
     const navigate = useNavigate();
 
-    function handleSignUp() {
+    function handleSignUp(event) {
+        event.preventDefault();
+        
         if(!name || !email || !password) {
             return alert("Preencha todos os dados!");
         }
@@ -42,7 +44,7 @@ export function SignUp() {
     
     return(
         <Container>
-            <Form>
+            <Form onSubmit={handleSignUp} >
                 <h1>RocketMovies</h1>
                 <p>Aplicação para acompanhar tudo que assistir.</p>
                 <h2>Crie sua conta</h2>
@@ -68,7 +70,7 @@ export function SignUp() {
                     onChange={e => setPassword(e.target.value)}  
                 />
 
-                <ButtonPink title="Cadastrar" onClick={handleSignUp} />
+                <ButtonPink title="Cadastrar" type="submit" />
 
                 <button onClick={handleBack}>Voltar para o login</button>
             </Form>
