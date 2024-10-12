@@ -33,9 +33,12 @@ export const Profile = styled.div`
         text-align:right;
         width: 12.5rem;
 
-        > a {
-            text-decoration: none;
+        > button {
+            font-size: 1.4rem;
             color: ${({ theme }) => theme.COLORS.GRAY};
+            background: none;
+            border: none;
+            text-align: right;
         }
     }
 

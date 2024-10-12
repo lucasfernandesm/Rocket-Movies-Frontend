@@ -28,6 +28,13 @@ function AuthProvider({ children }) {
         }
     }
 
+    function signOut(){
+        localStorage.removeItem("@rocketnotes:user");
+        localStorage.removeItem("@rocketnotes:token");
+
+        setData({});
+    }
+
     useEffect(() => {
         const user = localStorage.getItem("@rocketnotes:user");
         const token = localStorage.getItem("@rocketnotes:token");
@@ -36,14 +43,14 @@ function AuthProvider({ children }) {
             api.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
             setData({
-                token,
-                user: JSON.parse(user)
+                user: JSON.parse(user),
+                token
             });
         }
     }, []);
 
     return (
-        <AuthContext.Provider value={{ signIn, user: data.user }}>
+        <AuthContext.Provider value={{ signIn, signOut, user: data.user }}>
             { children }
         </AuthContext.Provider>
     )
