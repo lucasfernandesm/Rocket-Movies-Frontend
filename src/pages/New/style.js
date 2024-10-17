@@ -60,6 +60,19 @@ export const Markers = styled.div`
 
     border-radius: 0.8rem;
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_BLACK};
+
+    overflow: hidden;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+        width: 0.2rem; 
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: ${({ theme }) => theme.COLORS.PINK};
+        border-radius: 1rem;
+    }
 `;
 
 export const DeleteAndSave = styled.div`
