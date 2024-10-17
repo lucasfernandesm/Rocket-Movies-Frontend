@@ -12,7 +12,7 @@ import { api } from '../../services/api';
 import avatarPlaceholder from '../../assets/avatar_placeholder.svg';
 
 
-export function Header() {
+export function Header({ search, setSearch }) {
     const { signOut, user } = useAuth();
     const navigate = useNavigate();
 
@@ -21,13 +21,22 @@ export function Header() {
         signOut();
     }
 
+    function handleSearch(e) {
+        navigate("/");
+        setSearch(e.target.value);
+    }
+
     const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
 
     return(
         <Container >
             <h1>RocketMovies</h1>
 
-            <Input placeholder="Pesquisar pelo título" />
+            <Input 
+                placeholder="Pesquisar pelo título" 
+                value={search}
+                onChange={handleSearch}
+            />
 
             <Profile>
                 <div>

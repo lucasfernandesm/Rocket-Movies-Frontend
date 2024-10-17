@@ -13,9 +13,9 @@ export function Card({ data, ...rest }) {
             <Container { ...rest }>
                 <h2>{ data.title }</h2>
 
-                <Stars />
+                <Stars rating={ data.rating }/>
 
-                <p>{data.summary}</p>
+                <p>{data.description}</p>
 
                 {
                     data.tags &&
