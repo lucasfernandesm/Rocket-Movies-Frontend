@@ -26,7 +26,9 @@ export function Home() {
         fetchNotes();
     }, [search]);
 
-    notes.map(note => console.log(note));
+    function handleDetails(id) {
+        navigate(`/details/${id}`);
+    }
 
     return(
         <Container>

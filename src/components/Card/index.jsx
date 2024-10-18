@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom'
 
 export function Card({ data, ...rest }) {
     return(
-        <Link to="details/:id">
             <Container { ...rest }>
                 <h2>{ data.title }</h2>
 
@@ -26,6 +25,5 @@ export function Card({ data, ...rest }) {
                     </footer>
                 }
             </Container>
-        </Link>
     )
 }
