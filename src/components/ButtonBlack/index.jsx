@@ -2,9 +2,9 @@
 
 import { Container } from './style'
 
-export function ButtonBlack({ title }) {
+export function ButtonBlack({ title, ...rest }) {
     return(
-        <Container>
+        <Container { ...rest }>
             { title }
         </Container>
     )

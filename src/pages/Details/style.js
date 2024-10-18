@@ -25,6 +25,10 @@ export const Content =styled.div`
     overflow-y: auto;
     max-height: 47.5rem;
 
+    p {
+        margin-bottom: 2rem;
+    }
+
     &::-webkit-scrollbar {
         width: 0.8rem; 
         background-color: transparent;

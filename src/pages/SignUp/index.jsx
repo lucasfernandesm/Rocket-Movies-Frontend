@@ -39,7 +39,7 @@ export function SignUp() {
     }
 
     function handleBack() {
-        navigate("/");
+        navigate(-1);
     }
     
     return(
@@ -72,7 +72,7 @@ export function SignUp() {
 
                 <ButtonPink title="Cadastrar" type="submit" />
 
-                <button onClick={handleBack}>Voltar para o login</button>
+                <button type="button" onClick={handleBack}>Voltar para o login</button>
             </Form>
             <Background />
         </Container>

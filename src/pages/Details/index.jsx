@@ -6,6 +6,7 @@ import { MdOutlineWatchLater } from "react-icons/md";
 
 import { Header } from '../../components/Header';
 import { ButtonText } from '../../components/ButtonText';
+import { ButtonBlack } from '../../components/ButtonBlack';
 import { Stars } from '../../components/Stars';
 import { Tag } from '../../components/Tag';
 
@@ -33,6 +34,15 @@ export function Details() {
 
     function formatDate(dateTimeString) {
         return format(new Date(dateTimeString), "dd/MM/yy 'às' HH:mm");
+    }
+
+    async function handleRemove() {
+        const confirm = window.confirm("Deseja realmente remover a nota?");
+        
+        if(confirm) {
+          await api.delete(`/notes/${params.id}`);
+          handleBack();
+        }
     }
 
     useEffect(() => {
@@ -79,6 +89,8 @@ export function Details() {
                             </Tags>
 
                             <p>{data.description}</p>
+
+                            <ButtonBlack title="Excluir filme" onClick={handleRemove}/>
                         </Content>
                 }
             </main>

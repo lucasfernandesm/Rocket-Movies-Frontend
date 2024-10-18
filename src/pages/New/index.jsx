@@ -128,8 +128,7 @@ export function New() {
                     </Markers>
 
                     <DeleteAndSave>
-                        <ButtonBlack title="Excluir filme" />
-                        <ButtonPink title="Salvar alterações" onClick={handleNewNote} />
+                        <ButtonPink title="Salvar" onClick={handleNewNote} />
                     </DeleteAndSave>
                 </form>
             </main>
