@@ -60,7 +60,7 @@ This project was developed with the following technologies:
 <br><br>
 <h2 align="left" id="Link-to-view-backend-code"> <img src=https://github.com/user-attachments/assets/01c56b54-2205-4397-8f3a-ee4474e317ff alt="ProjectIcon" style="width:26px;">&nbsp;&nbsp;   Link to view backend code </h2>
 
-[Backend Code](https://notesaboutmovies.netlify.app/)
+[Backend Code](https://github.com/lucasfernandesm/Rocket-Movies-API)
 
 <br><br>
 ## :memo: License
