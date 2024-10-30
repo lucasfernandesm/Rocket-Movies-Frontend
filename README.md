@@ -18,11 +18,11 @@ This project was developed with Node.js, React and SQLite.
 
 <br><br>
 <h1 align="center">
-  <img alt="RocketMovies project" src="./assets/RocketMovies1.png" width="700"/>
+  <img alt="RocketMovies project" src="./assets/rocketMovies1.png" width="700"/>
 </h1>
 
 <h1 align="center">
-  <img alt="RocketMovies project" src="./assets/RocketMovies2.png" width="700"/>
+  <img alt="RocketMovies project" src="./assets/rocketMovies2.png" width="700"/>
 </h1>
 
 <br><br>
